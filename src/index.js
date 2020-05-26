@@ -12,7 +12,8 @@ import ReactDOM from 'react-dom'
  */
 // const myh1 = React.createElement('h1',null,'这是一个H1')
 const myh1 = React.createElement('h1',{id:'h1'},'这是一个H1')
-const mydiv = React.createElement('div',null,'这是一个DIV',myh1)
+// const mydiv = React.createElement('div',null,'这是一个DIV',myh1)
+const mydiv = <div>这是一个div</div>
 /**
  * 把虚拟DOM渲染到页面上
  * 参数1:要渲染的虚拟DOM,
@@ -20,3 +21,7 @@ const mydiv = React.createElement('div',null,'这是一个DIV',myh1)
  * 
  */
 ReactDOM.render(mydiv,document.getElementById('app'))
+
+
+//安装babel转换jsx
+//jsx语法的本质，还是在运行的时候，被转换成了React.createElement形式来执行
