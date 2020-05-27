@@ -1,0 +1,8 @@
+.title {
+    text-align: center;
+    color: red;
+}
+/* 不会模块化，全局的 */
+:global(.test){
+    color: seagreen;
+}

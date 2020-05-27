@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import CmList2 from '@/components/CmList2'
+import CmList from '@/components/CmList'
 
 
 ReactDOM.render(<div>
-    <CmList2></CmList2>
+    <CmList></CmList>
 </div>, document.getElementById('app'))
