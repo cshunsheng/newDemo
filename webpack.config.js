@@ -6,24 +6,29 @@ const htmlPlugin = new HtmlWebPackPlugin({
 })
 module.exports = {
     mode: 'development',
+    entry: './src/main.js',
     plugins: [
         htmlPlugin
     ],
     module: {
         rules: [
-            { test: /\.js|jsx$/, use: 'babel-loader', exclude: /node_modules/ },
             {
-                test: /\.css$/, use: ['style-loader', {
-                        loader: 'css-loader',
-                        //获取localIdentName
-                        options: {
-                            modules: {
-                                localIdentName: '[path][name]-[local]-[hash:5]'
-                            },
-                        }
+                test: /\.css$/, use: ['style-loader', 'css-loader',]
+            },
+            {
+                test: /\.scss$/, use: ['style-loader', {
+                    loader: 'css-loader',
+                    //获取localIdentName
+                    options: {
+                        modules: {
+                            localIdentName: '[path][name]-[local]-[hash:5]'
+                        },
                     }
+                },'sass-loader'
                 ]
             },
+            { test: /\.(png|gif|bmp|jpg)$/, use: 'url-loader?limit=5000'},
+            { test: /\.js|jsx$/, use: 'babel-loader', exclude: /node_modules/ },
         ]
     },
     resolve: {
